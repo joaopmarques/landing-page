@@ -1,12 +1,16 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  --yellow: #ffff00;
+  --grey: #171517dd;
+  --offwhite: rgba(255, 250, 254, 0.87);
+
+  font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--offwhite);
+  background-color: var(--grey);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,56 +19,146 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+#root {
+  margin: 0 auto;
+  padding: 0 3.5rem;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.48rem;
+  color: var(--offwhite);
+}
+
 a:hover {
-  color: #535bf2;
+  color: #ffffbf;
 }
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  font-weight: 400;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 3rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  opacity: 0.74;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.tagline {
+  font-size: clamp(1rem, 6vmin, 12rem);
 }
-button:hover {
-  border-color: #646cff;
+
+span.gradient {
+  font-weight: 900;
+  color: transparent;
+  text-shadow: 0 3px 28px #eee76433;
+  background: linear-gradient(45deg,
+  #eee764,
+  #9affa1,
+  #95f1e1,
+  #f3afff,
+  #ffa9a9),
+  radial-gradient(rgba(174, 0, 255, 0.79), rgba(255, 255, 255, 0.808));
+  background-blend-mode: overlay color-dodge lighten;
+  background-size: 100% 500%;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  span.gradient {
+    animation: aurora 1s infinite alternate-reverse linear,
+    text-rainbow 1s infinite alternate-reverse;
+  }
+  
+  @keyframes aurora {
+    0% {
+      background-position: left top;
+    }
+    50% {
+      background-position: left bottom;
+    }
+    100% {
+      background-position: left top;
+    }
+  }
+
+  @keyframes text-rainbow {
+    0% {
+      text-shadow: 0 3px 28px #eee76433;
+    }
+    25% {
+      text-shadow: 0 3px 28px #9affa133;
+    }
+    50% {
+      text-shadow: 0 3px 28px #95f1e133;
+    }
+    75% {
+      text-shadow: 0 3px 28px #f3afff33;
+    }
+    100% {
+      text-shadow: 0 3px 28px #ffa9a933;
+    }
+  }
+}
+
+.links-container {
+  display: flex;
+  gap: 32px;
+  padding: 0 0 3.42rem;
+  margin-top: auto;
+}
+
+ul.attributes {
+  list-style-type: none;
+  margin: 0 0 1.2rem;
+  padding: 0;
+}
+
+ul.attributes li {
+  padding: 0 0 0.6rem;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--grey);
+    background-color: #e8e7df;
   }
+  
+  a {
+    color: var(--grey);
+  }
+  
   a:hover {
-    color: #747bff;
+    color: #7a777a;
   }
-  button {
-    background-color: #f9f9f9;
+  
+  span.gradient {
+    background: linear-gradient(45deg,
+    #d6a71b,
+    #3ddf5e,
+    #22c3a0,
+    #a136c8,
+    #ba3966);
+
+    animation: aurora 1s infinite alternate-reverse linear;
+    background-blend-mode: overlay color-burn normal;
+    background-size: 100% 500%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 24px 42px #33333355 !important;
   }
 }
