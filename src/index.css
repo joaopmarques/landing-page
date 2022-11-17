@@ -120,6 +120,14 @@ span.gradient {
   gap: 32px;
   padding: 0 0 3.42rem;
   margin-top: auto;
+
+  @media screen and (pointer: coarse) {
+    margin-top: 6rem !important;
+  }
+
+  @media screen and (hover: none) {
+    margin-top: 6rem !important;
+  }
 }
 
 ul.attributes {
