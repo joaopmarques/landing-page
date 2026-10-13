@@ -1,0 +1,162 @@
+a.home-link {
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+ul.skills {
+  list-style-type: none;
+  margin: 0 0 4rem;
+  padding: 0;
+  max-width: 44rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 250, 254, 0.14);
+  border-radius: 14px;
+}
+
+.skill-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skill-emoji {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+a.skill-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a.skill-name:hover {
+  text-decoration: underline;
+}
+
+.skill-description {
+  margin: 0.75rem 0 1.25rem;
+  opacity: 0.8;
+}
+
+.skill-install {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skill button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 120ms ease-out, background-color 120ms ease-out;
+}
+
+.skill button:active {
+  transform: scale(0.97);
+}
+
+.copy-prompt {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #171517;
+  background-color: var(--yellow);
+  min-width: 12.5rem;
+}
+
+.copy-prompt:hover {
+  background-color: #ffffbf;
+}
+
+.or {
+  opacity: 0.6;
+  font-size: 0.875rem;
+}
+
+code.command {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.3rem 0.3rem 0.3rem 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  background-color: rgba(255, 250, 254, 0.08);
+}
+
+code.command span {
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.copy-command {
+  font-size: 0.8125rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(255, 250, 254, 0.2);
+  color: inherit;
+  background: transparent;
+  min-width: 4.75rem;
+}
+
+.copy-command:hover {
+  background-color: rgba(255, 250, 254, 0.08);
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 0 1.25rem;
+  }
+
+  .skill {
+    padding: 1.25rem;
+  }
+
+  code.command {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  code.command span {
+    width: 0;
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .skill {
+    border-color: rgba(23, 21, 23, 0.14);
+  }
+
+  .copy-prompt {
+    color: #e8e7df;
+    background-color: #171517;
+  }
+
+  .copy-prompt:hover {
+    background-color: #3a373a;
+  }
+
+  code.command {
+    background-color: rgba(23, 21, 23, 0.06);
+  }
+
+  .copy-command {
+    border-color: rgba(23, 21, 23, 0.2);
+  }
+
+  .copy-command:hover {
+    background-color: rgba(23, 21, 23, 0.06);
+  }
+}
