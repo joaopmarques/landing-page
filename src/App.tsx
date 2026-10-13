@@ -12,6 +12,7 @@ function App() {
       <div className="links-container">
         <a href="https://github.com/joaopmarques" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/jopmarques/" target="_blank">LinkedIn</a>
+        <a href="/skills">Skills</a>
       </div>
     </div>
   )
