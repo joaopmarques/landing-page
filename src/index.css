@@ -24,6 +24,12 @@
   padding: 0 3.5rem;
 }
 
+@media (max-width: 600px) {
+  #root {
+    padding: 0 1.25rem;
+  }
+}
+
 .App {
   width: 100%;
   max-width: 960px;
@@ -46,7 +52,6 @@ a:hover {
 
 body {
   margin: 0;
-  place-items: center;
   min-width: 320px;
   font-weight: 400;
 }

@@ -5,6 +5,7 @@ type Skill = {
   name: string
   description: string
   repo: string
+  credit?: { label: string; href: string }
 }
 
 const skills: Skill[] = [
@@ -14,6 +15,10 @@ const skills: Skill[] = [
     description:
       'Grills your plan for you. It picks every answer, shows its confidence, and serves a short plan plus ideas you did not consider.',
     repo: 'joaopmarques/barbeque',
+    credit: {
+      label: 'Matt Pocock’s grilling skill',
+      href: 'https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md',
+    },
   },
   {
     emoji: '🧐',
@@ -103,6 +108,15 @@ function Skills() {
               </a>
             </div>
             <p className="skill-description">{skill.description}</p>
+            {skill.credit && (
+              <p className="skill-credit">
+                Inspired by{' '}
+                <a href={skill.credit.href} target="_blank">
+                  {skill.credit.label}
+                </a>
+                .
+              </p>
+            )}
             <div className="skill-install">
               <CopyButton text={prompt(skill)} label="Copy prompt for agent" className="copy-prompt" />
               <span className="or">or</span>

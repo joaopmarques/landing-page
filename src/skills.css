@@ -49,6 +49,17 @@ a.skill-name:hover {
   opacity: 0.8;
 }
 
+.skill-credit {
+  margin: -0.5rem 0 1rem;
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+.skill-credit a {
+  font-weight: 600;
+  text-underline-offset: 0.24rem;
+}
+
 .skill-install {
   display: flex;
   flex-wrap: wrap;
@@ -114,10 +125,6 @@ code.command span {
 }
 
 @media (max-width: 600px) {
-  #root {
-    padding: 0 1.25rem;
-  }
-
   code.command {
     width: 100%;
     box-sizing: border-box;
